@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy Lite</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            color: #222;
+        }
+        header {
+            background: #172554;
+            color: white;
+            padding: 22px;
+            text-align: center;
+        }
+        nav {
+            background: #1e40af;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+        }
+        .container {
+            padding: 30px;
+            text-align: center;
+        }
+        .products {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product {
+            background: white;
+            padding: 20px;
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ddd;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            background: #172554;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ShopEasy Lite</h1>
+        <p>Your simple online shopping destination</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container" id="products">
+        <h2>Our Products</h2>
+        <div class="products">
+            <div class="product">
+                <h3>Smartphone</h3>
+                <p>Price: ₹12,999</p>
+                <button onclick="addToCart('Smartphone')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>Headphones</h3>
+                <p>Price: ₹1,499</p>
+                <button onclick="addToCart('Headphones')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>Smart Watch</h3>
+                <p>Price: ₹2,499</p>
+                <button onclick="addToCart('Smart Watch')">Add to Cart</button>
+            </div>
+        </div>
+        <h3 id="cart">Cart: 0 items</h3>
+    </div>
+
+    <footer id="contact">
+        <p>ShopEasy Lite - DevOps Lab 7 Project</p>
+    </footer>
+
+    <script>
+        let count = 0;
+
+        function addToCart(product) {
+            count++;
+            document.getElementById("cart").innerText =
+                "Cart: " + count + " items";
+            alert(product + " added to cart!");
+        }
+    </script>
+</body>
+</html>
